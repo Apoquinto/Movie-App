@@ -1,5 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap");
+:root {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-color);
+  --main-color: #6175de;
+  --main-contrast: #f0f4fe;
+  --text-color: #343a40;
+  --bg: #f1f3f5;
+}
+
 nav {
   display: flex;
+  background-color: var(--bg);
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
@@ -8,11 +19,12 @@ nav {
 nav .title {
   display: flex;
   align-items: center;
+  color: var(--main-color);
 }
 
 nav .title .icon {
   padding-right: 0.5rem;
-  fill: black;
+  fill: var(--main-color);
 }
 
 nav .links {
@@ -21,12 +33,14 @@ nav .links {
 }
 
 nav .links a {
-  padding: 0.5rem;
+  padding: 0.4em 0.6em;
   border-radius: 0.5rem;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 nav .links a:hover {
-  background-color: #f1f3f5;
+  color: var(--main-color);
 }
 
 nav .links li {
