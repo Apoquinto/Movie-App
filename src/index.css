@@ -1,12 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap");
 :root {
+  scroll-behavior: smooth;
+  --main-color: #6175de;
+  --main-contrast: #f0f4fe;
+  --border-color: #cfd4da;
+  --text-color: #343a40;
+  --bg: #f1f3f5;
   font-family: "Open Sans", sans-serif;
   background-color: var(--bg);
   color: var(--text-color);
-  --main-color: #6175de;
-  --main-contrast: #f0f4fe;
-  --text-color: #343a40;
-  --bg: #f1f3f5;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 nav {
@@ -14,6 +22,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  border-bottom: 0.1rem solid var(--border-color);
+  background-color: white;
 }
 
 nav .title {
@@ -33,7 +43,7 @@ nav .links {
 }
 
 nav .links a {
-  padding: 0.4em 0.6em;
+  padding: 0.4em;
   border-radius: 0.5rem;
   color: var(--text-color);
   text-decoration: none;
@@ -45,4 +55,8 @@ nav .links a:hover {
 
 nav .links li {
   list-style: none;
+}
+
+.wrapper {
+  padding: 0 2rem;
 }
