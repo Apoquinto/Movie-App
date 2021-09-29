@@ -1,5 +1,5 @@
-import { home } from "./view/pages/Home/Home.js";
-import { movieList } from "./view/pages/MovieList/MovieList.js";
+import { home } from "../view/pages/Home/Home.js";
+import { movieList } from "../view/pages/MovieList/MovieList.js";
 
 const wrapper = document.getElementById("wrapper");
 
