@@ -1,7 +1,24 @@
-import { home } from "./view/pages/Home";
+import { home } from "./view/pages/Home/Home.js";
+import { movieList } from "./view/pages/MovieList/MovieList.js";
 
-const div = document.getElementById("wrapper");
+const wrapper = document.getElementById("wrapper");
 
-console.log(div);
+wrapper.innerHTML = home;
 
-console.log(home);
+const homeLink = document.getElementById("homeLink");
+homeLink.addEventListener(
+  "click",
+  function (ev) {
+    wrapper.innerHTML = home;
+  },
+  false
+);
+
+const movieLink = document.getElementById("movieLink");
+movieLink.addEventListener(
+  "click",
+  function (ev) {
+    wrapper.innerHTML = movieList;
+  },
+  false
+);
