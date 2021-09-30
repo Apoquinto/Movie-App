@@ -39,9 +39,9 @@ table {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.modal-container .show {
-  pointer-events: auto;
+.show {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .modal {
@@ -62,10 +62,11 @@ table {
   width: 100%;
 }
 </style>
+
 <div class="modal-container" id="modalContainer">
       <div class="modal">
         <h2>Agregar pelicula</h2>
-        <form>
+        <form id="newMovie">
           <div class="field">
             <label for="movieId">Id</label>
             <input type="text" id="movieId" />
@@ -79,8 +80,8 @@ table {
             <input type="text" id="author" />
           </div>
           <div class="field">
-            <label for="realeseDate">Año de estreno</label>
-            <input type="text" id="realeseDate" />
+            <label for="realeseYear">Año de estreno</label>
+            <input type="text" id="realeseYear" />
           </div>
           <button id="closeModalButton">Agregar</button>
         </form>
