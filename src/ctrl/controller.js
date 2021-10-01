@@ -3,7 +3,6 @@ import { home } from "../view/pages/Home/Home.js";
 import { movieList } from "../view/pages/MovieList/MovieList.js";
 
 const wrapper = document.getElementById("wrapper");
-
 wrapper.innerHTML = home;
 
 const homeLink = document.getElementById("homeLink");
@@ -44,7 +43,13 @@ function renderMovieCollection() {
     function (ev) {
       ev.preventDefault();
       let { movieId, title, author, realeseYear } = form;
-      console.log(movieId.value, title.value, author.value, realeseYear.value);
+      let newMovie = new Movie(
+        movieId.value,
+        title.value,
+        author.value,
+        realeseYear.value
+      );
+      console.log(newMovie);
       modal.classList.remove("show");
     },
     false

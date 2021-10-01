@@ -81,7 +81,7 @@ table {
           </div>
           <div class="field">
             <label for="realeseYear">Año de estreno</label>
-            <input type="text" id="realeseYear" />
+            <input type="date" id="realeseYear" />
           </div>
           <button id="closeModalButton">Agregar</button>
         </form>
@@ -111,40 +111,3 @@ table {
 </table>
 </div>
 `;
-
-// .addMenu {
-//   width: 100%;
-//   display: flex;
-//   justify-content: left;
-// }
-// .addMenu form {
-//   display: flex;
-//   align-content: space-between;
-// }
-// .addMenu form .field {
-//   display: flex;
-//   padding: 0 1rem;
-//   flex-direction: column;
-// }
-
-// <div class="addMenu">
-// <form>
-//   <div class="field">
-//     <label for="movieId">Id</label>
-//     <input type="text" id="movieId" />
-//   </div>
-//   <div class="field">
-//     <label for="title">Titulo</label>
-//     <input type="text" id="title" />
-//   </div>
-//   <div class="field">
-//     <label for="author">Autor</label>
-//     <input type="text" id="author" />
-//   </div>
-//   <div class="field">
-//     <label for="realeseDate">Año de estreno</label>
-//     <input type="text" id="realeseDate" />
-//   </div>
-//   <button>Agregar</button>
-// </form>
-// </div>
