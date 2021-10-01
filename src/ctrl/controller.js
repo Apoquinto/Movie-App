@@ -1,9 +1,13 @@
-import { Movie } from "../model/Movie.js";
-import { home } from "../view/pages/Home/Home.js";
 import { movieList } from "../view/pages/MovieList/MovieList.js";
+import { home } from "../view/pages/Home/Home.js";
+
+import { DBManager } from "../model/DBManager.js";
+import { Movie } from "../model/Movie.js";
 
 const wrapper = document.getElementById("wrapper");
 wrapper.innerHTML = home;
+
+let data = new DBManager("App Movies", ["Movies", "User"]);
 
 const homeLink = document.getElementById("homeLink");
 homeLink.addEventListener(

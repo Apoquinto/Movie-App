@@ -1,7 +1,7 @@
 export class DBManager {
-  constructor() {
+  constructor(DBName, collections) {
     this.dbSource = window.indexedDB;
-    this.cnx = indexedDB.open("App Movies", 1);
+    this.cnx = indexedDB.open(DBName, 1);
     this.cnx.onsuccess = () => {
       this.db = this.cnx.result;
       console.log("Base de datos inicializada ", this.db);
@@ -10,9 +10,11 @@ export class DBManager {
     this.cnx.onupgradeneeded = (e) => {
       this.db = e.target.result;
       console.log("Base de datos creada ", this.db);
-      this.collection = this.db.createObjectStore("Movies", {
-        keyPath: "key",
-      });
+      for (let collection of collections) {
+        this.db.createObjectStore(collection, {
+          keyPath: collection,
+        });
+      }
     };
 
     this.cnx.onerror = (error) => {
