@@ -48,14 +48,7 @@ function renderMovieCollection() {
     "click",
     function (ev) {
       ev.preventDefault();
-      let { movieId, title, author, realeseYear } = form;
-      let newMovie = new Movie(
-        movieId.value,
-        title.value,
-        author.value,
-        realeseYear.value
-      );
-      console.log(newMovie);
+      // Inserte lo que pasa al darle al botón.
       modal.classList.remove("show");
     },
     false
