@@ -9,7 +9,7 @@ wrapper.innerHTML = home;
 
 let data = new DBManager("App Movies", ["Movies", "User"]);
 
-data.insertOne("Movies", { A: "TEst" });
+console.log(data);
 
 const homeLink = document.getElementById("homeLink");
 homeLink.addEventListener(

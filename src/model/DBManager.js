@@ -2,22 +2,24 @@ export class DBManager {
   constructor(DBName, collections) {
     this.dbSource = window.indexedDB;
     this.cnx = indexedDB.open(DBName, 1);
-    this.db = "initial value";
-    this.setup(collections);
+    this.db = this.setup(collections);
   }
 
   setup(collections) {
+    let db = null;
+
     this.cnx.onsuccess = (e) => {
-      this.db = this.cnx.result;
-      console.log("Base de datos inicializada ", this.db);
+      db = this.cnx.result;
+      console.log("Base de datos inicializada", db);
     };
 
     this.cnx.onupgradeneeded = (e) => {
-      this.db = e.target.result;
-      console.log("Base de datos creada ", this.db);
+      db = e.target.result;
+      console.log("Base de datos creada", db);
       for (let collection of collections) {
         this.db.createObjectStore(collection, {
-          keyPath: collection,
+          keyPath: "id",
+          autoIncrement: true,
         });
       }
     };
@@ -25,6 +27,8 @@ export class DBManager {
     this.cnx.onerror = (error) => {
       console.log(`Error al iniciar base de datos: ${error}`);
     };
+
+    return db;
   }
 
   insertOne(collectionName, data) {
