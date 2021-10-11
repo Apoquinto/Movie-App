@@ -13,10 +13,11 @@ class Card extends HTMLElement {
 
   connectedCallback() {
     this.divTitle.innerHTML = `<strong>
-          ${this.getAttribute("title")}
-      </strong>`;
-    this.divDesc.innerHTML = `¨
-        ${this.getAttribute("description")}
+      ${this.getAttribute("title")}
+    </strong>`;
+
+    this.divDesc.innerHTML = `
+      ${this.getAttribute("description")}
     `;
   }
 }
