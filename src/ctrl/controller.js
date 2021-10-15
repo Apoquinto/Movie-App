@@ -1,13 +1,23 @@
 import { movieList } from "../view/pages/MovieList/MovieList.js";
 import { home } from "../view/pages/Home/Home.js";
 
-import { DBManager } from "../model/DBManager.js";
+import { IndexedDBManager } from "../model/DBManager.js";
 import { Movie } from "../model/Movie.js";
 
 const wrapper = document.getElementById("wrapper");
 wrapper.innerHTML = home;
 
-let data = new DBManager("App Movies", ["Movies", "User"]);
+let collections = [
+  {
+    name: "Movies",
+    config: {
+      keyPath: "id",
+      autoIncrement: true,
+    },
+  },
+];
+let data = new IndexedDBManager("App Movies", 1, collections);
+data.init();
 
 console.log(data);
 
