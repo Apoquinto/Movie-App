@@ -1,30 +1,8 @@
 import { movieList } from "../view/pages/MovieList/MovieList.js";
 import { home } from "../view/pages/Home/Home.js";
 
-import { IndexedDBManager } from "../model/DBManager.js";
-import { Movie } from "../model/Movie.js";
-
 const wrapper = document.getElementById("wrapper");
 wrapper.innerHTML = home;
-
-let collections = [
-  {
-    name: "Movies",
-    config: {
-      keyPath: "id",
-      autoIncrement: true,
-    },
-    name: "users",
-    config: {
-      keyPath: "id",
-      autoIncrement: true,
-    },
-  },
-];
-let data = new IndexedDBManager("App Movies", 1, collections);
-data.init();
-
-console.log(data);
 
 const homeLink = document.getElementById("homeLink");
 homeLink.addEventListener(
@@ -49,6 +27,7 @@ function renderMovieCollection() {
   const modal = document.getElementById("modalContainer");
   const openModal = document.getElementById("addFilm");
   const form = document.getElementById("newMovie");
+  const tableBody = document.getElementById("table-body");
 
   openModal.addEventListener(
     "click",
