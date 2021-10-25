@@ -1,6 +1,8 @@
 import { movieList } from "../view/pages/MovieList/MovieList.js";
 import { home } from "../view/pages/Home/Home.js";
 
+import { FakeMovieCollectionData } from "../model/FakeData.js";
+
 const wrapper = document.getElementById("wrapper");
 wrapper.innerHTML = home;
 
@@ -28,7 +30,9 @@ function renderMovieCollection() {
   const openModal = document.getElementById("addFilm");
   const form = document.getElementById("newMovie");
 
-  addTableRow(0, "Test", "Tester", 0);
+  for (let { id, title, directedBy, releaseDate } of FakeMovieCollectionData) {
+    addTableRow(id, title, directedBy, releaseDate);
+  }
 
   openModal.addEventListener(
     "click",
@@ -43,21 +47,20 @@ function renderMovieCollection() {
     "click",
     function (ev) {
       ev.preventDefault();
-      // Inserte lo que pasa al darle al botón.
       modal.classList.remove("show");
     },
     false
   );
 }
 
-function addTableRow(id, title, directedBy, releaseYear) {
+function addTableRow(id, title, directedBy, releaseDate) {
   const tableBody = document.getElementById("table-body");
   const rowTemplate = `
   <tr>
     <td>${id}</td>
     <td>${title}</td>
     <td>${directedBy}</td>
-    <td>${releaseYear}</td>
+    <td>${releaseDate}</td>
   </tr>
   `;
   tableBody.insertRow(-1).innerHTML = rowTemplate;
