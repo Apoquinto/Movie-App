@@ -14,6 +14,11 @@ let collections = [
       keyPath: "id",
       autoIncrement: true,
     },
+    name: "users",
+    config: {
+      keyPath: "id",
+      autoIncrement: true,
+    },
   },
 ];
 let data = new IndexedDBManager("App Movies", 1, collections);
