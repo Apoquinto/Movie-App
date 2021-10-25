@@ -27,7 +27,8 @@ function renderMovieCollection() {
   const modal = document.getElementById("modalContainer");
   const openModal = document.getElementById("addFilm");
   const form = document.getElementById("newMovie");
-  const tableBody = document.getElementById("table-body");
+
+  addTableRow(0, "Test", "Tester", 0);
 
   openModal.addEventListener(
     "click",
@@ -47,4 +48,17 @@ function renderMovieCollection() {
     },
     false
   );
+}
+
+function addTableRow(id, title, directedBy, releaseYear) {
+  const tableBody = document.getElementById("table-body");
+  const rowTemplate = `
+  <tr>
+    <td>${id}</td>
+    <td>${title}</td>
+    <td>${directedBy}</td>
+    <td>${releaseYear}</td>
+  </tr>
+  `;
+  tableBody.insertRow(-1).innerHTML = rowTemplate;
 }

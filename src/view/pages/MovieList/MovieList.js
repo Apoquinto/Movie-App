@@ -100,13 +100,7 @@ table {
       <th>Año de salida</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>The Wind Rises</td>
-      <td>Hayao Miyazaki</td>
-      <td>2013 </td>
-    </tr>
+  <tbody id="table-body">
   </tbody>
 </table>
 </div>
